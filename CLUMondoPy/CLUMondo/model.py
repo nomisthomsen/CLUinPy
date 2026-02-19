@@ -42,6 +42,7 @@ def clumondo_dynamic(land_array: np.ndarray,
                      width_neigh: int = 1,
                      demand_max: float = 3,
                      demand_setback: float = 0.5,
+                     demand_reset: int = 0,
                      no_data_out: int = 9999,
                      out_year: Optional[Union[int, List[int]]] = None,
                      no_data_value: int = -9999) -> None:
@@ -79,6 +80,7 @@ def clumondo_dynamic(land_array: np.ndarray,
         width_neigh (int, optional): Width that should be applied to calculate the influence of neighbouring pixels. A width of 1 equals a 3x3 window, 2 a 5x5 window etc.
         demand_max (float, optional): Maximum demand elasticity values (absolute), before it is set back.
         demand_setback (float, optional): Absolute set back value after reaching maximum demand elasticity (demand_max).
+        demand_reset (int, optional): Either 0 or 1. Whether demand elasticities should be reset to 0 for a new time step (1). If 0 (default), matching demand elasticities from previous time step are taken.
         no_data_out (int, optional): Value to insert for no_data_values in the output file. Depending on datatype, either -127 (int8) or -9999 (int16, float32) is recommended.
         out_year (int or list of int, optional): Either an integer or a list of integers indicating years for which output rasters should be written.
                                                 If nothing is provided, output will be written for all years.
@@ -142,15 +144,29 @@ def clumondo_dynamic(land_array: np.ndarray,
             subdir = create_timestamped_subfolder(out_dir)
             log_file_path = os.path.join(subdir, 'logfile.txt')
 
-            log_initial_data(log_file_path=log_file_path, start_year=start_year, end_year=end_year,
-                             change_years=change_years, neigh_weights=neigh_weights, conv_res=conv_res,
-                             allow=allow, demand=demand, dem_weights=dem_weights, max_iter=max_iter,
-                             max_diff_allow=max_diff_allow, totdiff_allow=totdiff_allow, metadata=metadata, lus_conv=lus_conv)
+            log_initial_data(log_file_path=log_file_path,
+                             start_year=start_year,
+                             end_year=end_year,
+                             change_years=change_years,
+                             neigh_weights=neigh_weights,
+                             conv_res=conv_res,
+                             allow=allow,
+                             demand=demand,
+                             dem_weights=dem_weights,
+                             max_iter=max_iter,
+                             max_diff_allow=max_diff_allow,
+                             totdiff_allow=totdiff_allow,
+                             metadata=metadata,
+                             lus_conv=lus_conv)
 
             # Set initial land cover and age arrays
             old_cov = land_array
             if age_array is not None:
                 old_age = age_array
+
+        if demand_reset == 1:
+            # Set demand elasticities back to zero before entering the while loop
+            dem_elas = np.zeros(len(dem_weights), dtype="float32")
 
         loop = 0
         maxdiff = 1000
@@ -165,18 +181,35 @@ def clumondo_dynamic(land_array: np.ndarray,
         speed = seed
 
         # Calculate neighbourhood
-        neigh_array = calc_neigh(old_cov, width_neigh, neigh_weights)
+        neigh_array = calc_neigh(land_cover_array=old_cov,
+                                 width=width_neigh,
+                                 weights=neigh_weights,
+                                 no_data_value=no_data_value)
 
         # Iterate until convergence or max iterations reached
         while loop < max_iter and (maxdiff > max_diff_allow or totdiff > totdiff_allow):
             # Calculate land cover change
-            land_array = calc_change(old_cov, suit_array, region_array, neigh_array, dem_weights, dem_elas,
-                                     conv_res, allow, lus_conv, zonal_array, preference_array, preference_weights,age_array)
+            land_array = calc_change(land_cover_array=old_cov,
+                                     suit_array_stack=suit_array,
+                                     region_array=region_array,
+                                     neigh_array_stack=neigh_array,
+                                     dem_weights=dem_weights,
+                                     dem_elas=dem_elas,
+                                     conv_res=conv_res,
+                                     allow=allow,
+                                     lus_conv=lus_conv,
+                                     zonal_array=zonal_array,
+                                     preference_array=preference_array,
+                                     preference_weights=preference_weights,
+                                     age_array=age_array)
             # Calculate demand elasticities
-            dem_elas, maxdiff, totdiff, diffarr = comp_demand(
-                demand[i], land_array, lus_matrix, dem_elas, speed,
-                demand_max=demand_max, demand_setback=demand_setback
-            )
+            dem_elas, maxdiff, totdiff, diffarr = comp_demand(demand_i=demand[i],
+                                                              cur_land_use_array=land_array,
+                                                              lus_matrix=lus_matrix,
+                                                              dem_elas=dem_elas,
+                                                              speed=speed,
+                                                              demand_max=demand_max,
+                                                              demand_setback=demand_setback)
             loop += 1
             print(f"year: {year}, loop: {loop}, totdiff: {totdiff}, maxdiff: {maxdiff}, differences: {diffarr} ,elasticities: {dem_elas}")
             # Log metadata for each iteration

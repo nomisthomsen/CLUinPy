@@ -38,7 +38,8 @@ def parse_args():
     parser.add_argument('--age_array', type=str, required=False, help='Path to age array.')
     parser.add_argument('--width_neigh', type=int, default=1, help='Window width for neighborhood analysis.')
     parser.add_argument('--demand_max', type=float, default=3.0, help='Maximum elasticity value for demand.')
-    parser.add_argument('--demand_setback', type=float, default=0.5, help='Elasticity setback value.')
+    parser.add_argument('--demand_setback', type=float, default=0.5, help='Elasticity setback value in while loop if max value is reached')
+    parser.add_argument('--demand_reset', type=int, default=0, help='Whether demand elasticities should be set back to zero for each time step (0/1)')
     parser.add_argument('--out_year', type=str, required=False, default='',
                         help='Comma-separated list of years or a single year to output results (e.g., "2030,2040" or "2050").')
     parser.add_argument('--no_data_value', type=int, default=-9999, help='No data value.')
@@ -97,6 +98,7 @@ def main():
     else:
         change_paths = []  # Default to an empty list if None
 
+    # Handle output years to write rasters
     if isinstance(args.out_year, str):
         out_year = [int(year.strip()) for year in args.out_year.split(',') if year.strip().isdigit()]
     elif isinstance(args.out_year, list):
@@ -138,6 +140,7 @@ def main():
         width_neigh=args.width_neigh,
         demand_max=args.demand_max,
         demand_setback=args.demand_setback,
+        demand_reset=args.demand_reset,
         out_year=out_year,
         no_data_value=no_data_value
     )

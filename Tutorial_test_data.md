@@ -10,7 +10,7 @@ This tutorial offers a way for potential users of CLUinPy to test the script wit
 We use the Canton Loreto district in Ecuador as a case study area for our test data. Loreto is located in the Western part of the Ecuadorian Amazon and has experienced high dynamics in land use change over the past decades. [ Lippe et al. 2022](https://www.sciencedirect.com/science/article/pii/S0264837722002344) have projected land use change in Loreto until 2030 with DynaCLUE. Hence, for more context on the study area we kindly refer to this paper.
 
 ![Study area map](testdata/land_cover_map_2016.jpg)
-*Figure 1. Land cover map of Loreto canton for the year 2016.*
+*Figure 1. Land cover map of Loreto canton for the year 2016 (figure created by S. Thomsen 2026).*
 
 ## Data
 
@@ -18,7 +18,7 @@ The following raster data is provided:
 
 <!-- TODO: Insert a figure showing example rasters / layers here -->
 
-| Raster file name | Description | Source | Download link | Comment |
+| Raster file name | Description | Source | Download link/ Data source | Comment |
 |---|---|---|---|---|
 | `lc2016.tif` | Land cover map for 2016 | MAE | http://mapainteractivo.ambiente.gob.ec/ | Online access no longer avaialable |
 | `protected_areas_nacionales.tif` | Binary map of national protected areas | MapBiomas Ecuador | https://storage.googleapis.com/mapbiomas-workspace/TERRITORIES/INDEXED/ECUADOR/WORKSPACE/PROTECTED_AREAS_NACIONALES/PROTECTED_AREAS_NACIONALES_v2.zip |  |

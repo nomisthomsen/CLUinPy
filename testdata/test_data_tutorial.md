@@ -11,8 +11,9 @@ This tutorial offers a way for potential users of CLUMondoPy to test the script 
 
 We use the Canton Loreto district in Ecuador as a case study area for our test data. Loreto is located in the Western part of the Ecuadorian Amazon and has experienced high dynamics in land use change over the past decades. [ Lippe et al. 2022](https://www.sciencedirect.com/science/article/pii/S0264837722002344) have projected land use change in Loreto until 2030 with DynaCLUE. Hence, for more context on the study area we kindly refer to this paper.
 
-![Study area map](testdata/land_cover_map_2016.jpg)
+![Study area map](land_cover_map_2016.jpg)
 *Figure 1. Land cover map of Loreto canton for the year 2016.*
+<!-- TODO: Insert citation / reference block here (e.g., Lippe et al. 2022) -->
 
 ## Data
 
@@ -59,17 +60,21 @@ The `lc2016.tif` file serves as the initial land cover map for our scenario mode
 
 Users can adjust different data and parameters in CLUMondoPy in order to calculate scenarios. This test data tutorial contains two scenario sets. Both sets contain the same files that are briefly summarized below:
 
-| File name | Description                                                                                                                                                                                                                                                                       |
-|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Demand.xlsx` | Land service demand for each time step (year)                                                                                                                                                                                                                                     |
-| `Allow.xlsx` | Which class wise land cover transitions are allowed                                                                                                                                                                                                                               |
-| `Lus_matrix.xlsx` | Indicates, how many units of land service can be provided per pixel and land cover class                                                                                                                                                                                          |
-| `Lus_conv.xlsx` | Indicates the conversion order of land cover classes per demand. Higher values indicate prioritization in conversion. For more details, please refer to the original [CLUMondo manual](https://dataverse.nl/file.xhtml?fileId=408508&version=1.0).                                |
-| `Config*.txt` | Contains relevant remaining parameters for scenario calculation and can be called as the only argument to the `runCLUMondoPy.py` file. A detailed description of all parameters in the configuration file can be found in the [manual](CLUMondoPy_Manual.pdf) in this repository. |
+<!-- TODO: Insert schematic of scenario inputs here -->
+
+| File name | Description |
+|---|---|
+| `Demand.xlsx` | Land service demand for each time step (year) |
+| `Allow.xlsx` | Which class wise land cover transitions are allowed |
+| `Lus_matrix.xlsx` | Indicates, how many units of land service can be provided per pixel and land cover class |
+| `Lus_conv.xlsx` | Indicates the conversion order of land cover classes per demand. Higher values indicate prioritization in conversion. For more details, please refer to the original CLUMondo manual. |
+| `Config*.txt` | Contains relevant remaining parameters for scenario calculation and can be called as the only argument to the `runCLUMondoPy.py` file. A detailed description of all parameters in the configuration file can be found in the manual in this repository. |
 
 The core innovation of CLUMondo over its predecessors (DynaCLUE, CLUE-S) is its ability to model multifunctional landscapes. This can be expressed in the model in the land service matrix (`lus_matrix.xlsx`) and land conversion matrix (`lus_conv.xlsx`). In the land service matrix, one can indicate that a particular land cover class can provide several services at once. Consequently, this is also reflected in the land conversion matrix, where users can define the priority order of land cover classes for each demanded service, in case it is provided by several classes.
 
-In this example, we provide a **single functionality scenario (scenario 1)**, in which we define demands for cattle, perennial crops, annual crops and mixed agriculture. These services are fulfilled by only one class each (pasture, perennial, annual and agricultural mosaic). For the **scenario 2**, we implemented **multifunctionality** by not defining specific demands for mixed agriculture, but defining that the class agricultural mosaic can partly fulfil three services (cattle, perennial crops and annual crops). Therefore, the class agricultural mosaic can compete with the other providing classes during the allocation process.
+In this example, we provide a single functionality scenario (scenario 1), in which we define demands for cattle, perennial crops, annual crops and mixed agriculture. These services are fulfilled by only one class each (pasture, perennial, annual and agricultural mosaic). For the scenario 2, we implemented multifunctionality by not defining specific demands for mixed agriculture, but defining that the class agricultural mosaic can partly fulfil three services (cattle, perennial crops and annual crops). Therefore, the class agricultural mosaic can compete with the other providing classes during the allocation process.
+
+<!-- TODO: Insert comparison figure/table between scenario 1 and scenario 2 here -->
 
 ## How to run the scenarios?
 
@@ -77,10 +82,12 @@ First, please install all necessary packages (see `requirements.txt`).
 
 ### Suitability (optionally)
 
-You may want to calculate location suitability for the land cover classes yourself. For this, you can run the `run_suitability.py` script in the Scripts module. You may want to adapt or change file paths in the script and adjust parameters to your preference. For further details on parameters please refer to the [suitability module manual](Suitability_Modelling_Manual.pdf) in the repository.
+You may want to calculate location suitability for the land cover classes yourself. For this, you can run the `run_suitability.py` script in the Scripts module. You may want to adapt or change file paths in the script and adjust parameters to your preference. For further details on parameters please refer to the suitability module manual in the repository.
+
+<!-- TODO: Insert a flowchart of suitability workflow here -->
 
 ### CLUMondoPy (land use model)
 
-To run one of the scenarios in CLUMondoPy, you need to run the `run_CLUMondoPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](README.md) document in this repo for further information on how to run CLUMondoPy with configuration txt files.
+To run one of the scenarios in CLUMondoPy, you need to run the `run_CLUMondoPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](CLUMondoPy/README.md) document in this repo for further information on how to run CLUMondoPy with configuration txt files.
 
 For visualization of the resulting land cover map projections in QGIS, you can use the `land_cover_visualization.qml` file.

@@ -3,12 +3,12 @@ import rasterio
 import pandas as pd
 import numpy as np
 
-from CLUMondo.model import clumondo_dynamic
+from cluinpy.model import clu_dynamic
 
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Run the CLUMondo model.')
+    parser = argparse.ArgumentParser(description='Run the src model.')
     parser.add_argument('--config', type=str, help='Path to the config file.')
     parser.add_argument('--land_array', type=str, required=False, help='Path to land array.')
     parser.add_argument('--suit_array', type=str, required=False, help='Path to suitability array.')
@@ -109,7 +109,7 @@ def main():
     # Create a list of input variable as metadata to store in logfile
     metadata = [args.land_array, args.region_array, args.suit_array, args.lus_matrix_path]
 
-    clumondo_dynamic(
+    clu_dynamic(
         land_array=land_array,
         suit_array=suit_array,
         region_array=region_array,

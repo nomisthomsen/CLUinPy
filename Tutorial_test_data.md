@@ -3,7 +3,7 @@
 
 ## Overview
 
-This tutorial offers a way for potential users of CLUMondoPy to test the script with some test data. This data includes different raster (`.tif`) and tabular (`.xlsx`) data. Raster files include a land cover map, location of protected areas (restriction zones) and predictor variables. Additionally, we also provide an already calculated suitability stack, but users may calculate suitability also on their own with the Suitability module. Tabular data include scenario settings such as demand and land use service matrices. We provide two sets for different scenarios and a configuration `.txt` file for each one.
+This tutorial offers a way for potential users of CLUinPy to test the script with some test data. This data includes different raster (`.tif`) and tabular (`.xlsx`) data. Raster files include a land cover map, location of protected areas (restriction zones) and predictor variables. Additionally, we also provide an already calculated suitability stack, but users may calculate suitability also on their own with the suitability module. Tabular data include scenario settings such as demand and land use service matrices. We provide two sets for different scenarios and a configuration `.txt` file for each one.
 
 ## Test data site background
 
@@ -55,7 +55,7 @@ The `lc2016.tif` file serves as the initial land cover map for our scenario mode
 
 ## Scenario parameters
 
-Users can adjust different data and parameters in CLUMondoPy in order to calculate scenarios. This test data tutorial contains two scenario sets. Both sets contain the same files that are briefly summarized below:
+Users can adjust different data and parameters in CLUinPy in order to calculate scenarios. This test data tutorial contains two scenario sets. Both sets contain the same files that are briefly summarized below:
 
 | File name | Description                                                                                                                                                                                                                                                                   |
 |---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -75,10 +75,10 @@ First, please install all necessary packages (see `requirements.txt`).
 
 ### Suitability (optionally)
 
-You may want to calculate location suitability for the land cover classes yourself. For this, you can run the `run_suitability.py` script in the Scripts module. You may want to adapt or change file paths in the script and adjust parameters to your preference. For further details on parameters please refer to the [suitability module manual](suitability_manual.md) in the repository.
+You may want to calculate location suitability for the land cover classes yourself. For this, you can run the `run_suitability.py` script in the scripts module. You may want to adapt or change file paths in the script and adjust parameters to your preference. For further details on parameters please refer to the [suitability module manual](suitability_manual.md) in the repository.
 
-### CLUMondoPy (land use model)
+### CLUinPy (land use model)
 
-To run one of the scenarios in CLUMondoPy, you need to run the `run_CLUMondoPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](README.md) and [manual](CLUinPy_manual.md) in this repository for further information on how to run CLUMondoPy with configuration txt files.
+To run one of the scenarios in CLUinPy, you need to run the `run_CLUinPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](README.md) and [manual](CLUinPy_manual.md) in this repository for further information on how to run CLUinPy with configuration txt files.
 
 For visualization of the resulting land cover map projections in QGIS, you can use the `land_cover_visualization.qml` file.

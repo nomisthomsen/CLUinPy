@@ -43,7 +43,7 @@ def write_logfile(out_path: str, **kwargs):
     """Writes parameters to a log file in the specified output directory."""
     log_filename = os.path.join(out_path, "suitability_log.txt")
     with open(log_filename, "w") as log_file:
-        log_file.write("Suitability Analysis Log\n")
+        log_file.write("suitability Analysis Log\n")
         log_file.write("========================\n\n")
         for key, value in kwargs.items():
             if isinstance(value, list):

@@ -1,10 +1,10 @@
 import rasterio
 
-from Suitability.main import suitability
-from Suitability.sampling import sample_per_class
-from Suitability.io_utils import find_files
+from suitability.main import suitability
+from suitability.sampling import sample_per_class
+from suitability.io_utils import find_files
 
-# This script serves to run suitability calculation, which can be used in CLUMondoPy afterward.
+# This script serves to run suitability calculation, which can be used in src afterward.
 # You may need to adapt the paths to your local folder structure.
 
 

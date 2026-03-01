@@ -13,7 +13,7 @@ from .transitions import calc_change
 from .demand import comp_demand
 from .age import calc_age, autonomous_change
 
-def clumondo_dynamic(land_array: np.ndarray,
+def clu_dynamic(land_array: np.ndarray,
                      suit_array: np.ndarray,
                      region_array: np.ndarray,
                      neigh_weights: np.ndarray,

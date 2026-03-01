@@ -1,24 +1,23 @@
-# CLUMondoPy: CLUMondo-Based Land Use Modeling in Python
+# CLUinPy: CLUMondo-Based Land Use Modeling in Python
 
 This Python-based land use modeling script simulates land use and land cover changes (LULCC) using principles inspired by the original **CLUMondo C++ model** created by **Peter Verburg** (link to the [Github repository](https://github.com/VUEG/CLUMondo) and link to the publication by [van Asselen & Verburg 2012](https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.12331)). 
 
-This repository contains two main sections:
+This repository contains three sections:
 
-1. The land cover suitability modelling (which is a prerequisite for land use modelling in CLUMondo). You can find the relevant scripts in the folder [Suitability](CLUMondoPy/Suitability/) and the manual as [PDF here](Suitability_Modelling_Manual.pdf).
+1. The land cover suitability modelling (which is a prerequisite for land use modelling in CLUMondo / CLUinPy). You can find the relevant scripts in the folder [Suitability](src/suitability/) and the manual [here](suitability_manual.md).
   
-2. The proper LULCC model based on CLUMondo. You can find the relevant scripts in the folder [CLUMondo](CLUMondoPy/CLUMondo) and the manual as [PDF here](CLUMondoPy_Manual.pdf)
+2. The proper LULCC model CLUinPy based on CLUMondo. You can find the relevant scripts in the folder [cluinpy](src/cluinpy) and the manual [here](CLUinPy_manual.md).
 
-A figure which gives an overview of the modelling modules can be found in the original publication by [van Asselen & Verburg 2012](https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.12331).
-
+3. A beginners [tutorial](Tutorial_test_data.md), including test data for Loreto canton, Ecuador.
 
 ---
 
 ## Repository Structure (important)
 
-The Python source code lives inside the `CLUMondoPy/` folder.
+The Python source code lives inside the `src/` folder.
 
-✅ **To run the model without installing the package**, change directory into `CLUMondoPy/` first (see Quickstart below).  
-✅ Alternatively, install the repo in editable mode (`pip install -e .`) and run from anywhere.
+- **To run the model without installing the package**, change directory into `src/` first (see Quickstart below).  
+- Alternatively, install the repo in editable mode (`pip install -e .`) and run from anywhere.
 
 
 ## Requirements
@@ -59,39 +58,39 @@ Optional (recommended for development / stable imports):
 pip install -e .
 ```
 ---
-## Quickstart: Run CLUMondoPy
+## Quickstart: Run CLUinPy
 The main entrypoint is:
-- `CLUMondoPy/Scripts/run_CLUMondoPy.py`
+- `src/scripts/run_CLUinPy.py`
 The script calls model logic from:
-- `CLUMondoPy/CLUMondo/`
+- `src/cluinpy/`
 
 ### 1) Run without installing (simple)
-**Always run from the `CLUMondoPy/` directory** (the folder containing `CLUMondo/`, `Scripts/`, `Suitability/`)
+**Always run from the `src/` directory** (the folder containing `cluinpy/`, `scripts/`, `suitability/`)
 
 **Windows (Powershell/ Windows Terminal):**
 ```powershell
-cd "\path\to\repo-root\CLUMondoPy"
-conda run --no-capture-output -n clupy python -m Scripts.run_CLUMondoPy --config "path\to\config_file.txt"
+cd "\path\to\repo-root\src"
+conda run --no-capture-output -n clupy python -m scripts.run_CLUinPy --config "path\to\config_file.txt"
 ```
 
 **Windows (Anaconda Prompt/ Miniforge Prompt):**
 ```bat
-cd \path\to\repo-root\CLUMondoPy
+cd \path\to\repo-root\src
 conda activate clupy
-python -m Scripts.run_CLUMondoPy --config "path\to\config_file.txt"
+python -m scripts.run_CLUinPy --config "path\to\config_file.txt"
 ```
 
 **Linux/ HPC (bash):**
 ```bash
-cd /path/to/repo-root/CLUMondoPy
+cd /path/to/repo-root/src
 conda activate clupy
-python -m Scripts.run_CLUMondoPy --config "/path/to/config_file.txt"
+python -m scripts.run_CLUMondoPy --config "/path/to/config_file.txt"
 ```
 
 ### 2) Run after installing (`pip install -e .`)
 If you installed in editable mode, you can still run using -m (recommended), and you are less sensitive to the current directory:
 ```bash
-python -m Scripts.run_CLUMondoPy --config "/path/to/config_file.txt"
+python -m scripts.run_CLUinPy --config "/path/to/config_file.txt"
 ```
 ---
 ## Configuration
@@ -102,7 +101,7 @@ The model is executed using a --config text file. The config typically contains:
 - model/scenario parameters
 - output paths or output directory settings
 
-Please refer to the [manual](CLUMondoPy_Manual.pdf) for a complete list of input requirements for the configuration txt file.
+Please refer to the [manual](CLUinPy_manual.md) for a complete list of input requirements for the configuration txt file.
 
 ### Path notes
 
@@ -113,16 +112,17 @@ Both `E:\folder\file.txt` and `E:/folder/file.txt` are typically fine for Python
 ---
 
 ## Suitability Modelling
-Suitability modelling is a prerequisite for CLUMondo-based land use modelling with CLUMondoPy.
-- Code: `CLUMondoPy/Suitability/`
-- [Manual](Suitability_Modelling_Manual.pdf) 
+CLUinPy requires users to include location suitability maps for each land cover class. This repository offers users to model location suitability with a dedicated module. The code can be found in `src/suitability/` and the core script to run the model is `run_suitability.py`.   
+
+In our modelling framework, users can choose between different modelling algorithms, including Logistic Regression, Random Forest and Support Vector Machines. More information on suitability modelling can be found in the respective [manual](suitability_manual.md). 
+
 ---
 
 ## Authors
-Simon Thomsen (simon.thomsen@thuenen.de);
-Melvin Lippe (melvin.lippe@thuenen.de)
+- Simon Thomsen (simon.thomsen@thuenen.de)  
+- Melvin Lippe (melvin.lippe@thuenen.de)
 
 ## License
-This project is licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.en.html). Please refer also to the [LICENSE](CLUMondoPy/LICENSE.md) file in this repository.
+This project is licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.en.html). Please refer also to the [LICENSE](src/LICENSE.md) file in this repository.
 
 

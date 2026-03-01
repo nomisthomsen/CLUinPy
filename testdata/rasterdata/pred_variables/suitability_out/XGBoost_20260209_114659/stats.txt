@@ -1,0 +1,371 @@
+0
+
+Feature Importances:
+dist_road,0.28696758
+entisol,0.17972285
+popdens_unadj,0.17520648
+dist_river,0.1730146
+slope,0.103883296
+aspect,0.06876033
+ntli2013,0.012444934
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 1.0
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.1
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 3
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 50
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.6
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+1
+
+Feature Importances:
+popdens_unadj,0.19423318
+dist_river,0.14984652
+slope,0.14532974
+ntli2013,0.14345448
+dist_road,0.1311595
+aspect,0.12721044
+entisol,0.1087661
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 1.0
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.01
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 9
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 200
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.6
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+2
+
+Feature Importances:
+dist_road,0.29897797
+slope,0.1846284
+ntli2013,0.18257962
+popdens_unadj,0.16595896
+dist_river,0.084215336
+aspect,0.05482013
+entisol,0.02881952
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 0.8
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.01
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 3
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 50
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 1.0
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+3
+
+Feature Importances:
+dist_road,0.21418893
+popdens_unadj,0.1792663
+dist_river,0.13888842
+slope,0.12893343
+aspect,0.118621
+entisol,0.11845077
+ntli2013,0.10165119
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 0.6
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.01
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 3
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 200
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.8
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+4
+
+Feature Importances:
+ntli2013,0.19426496
+dist_river,0.17988797
+dist_road,0.16655733
+popdens_unadj,0.14460924
+slope,0.110476434
+entisol,0.10523571
+aspect,0.098968334
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 1.0
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.01
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 6
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 100
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.6
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+5
+
+Feature Importances:
+dist_road,0.42384794
+ntli2013,0.14217421
+popdens_unadj,0.11064039
+dist_river,0.10184782
+slope,0.09695916
+entisol,0.07010123
+aspect,0.054429248
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 0.8
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.2
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 6
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 50
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.8
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+
+6
+
+Feature Importances:
+dist_river,0.5472548
+dist_road,0.096903995
+popdens_unadj,0.08672919
+slope,0.08472114
+entisol,0.074926354
+aspect,0.063793816
+ntli2013,0.045670778
+
+Best Parameters:
+objective: binary:logistic
+base_score: None
+booster: None
+callbacks: None
+colsample_bylevel: None
+colsample_bynode: None
+colsample_bytree: 1.0
+device: None
+early_stopping_rounds: None
+enable_categorical: False
+eval_metric: None
+feature_types: None
+gamma: None
+grow_policy: None
+importance_type: None
+interaction_constraints: None
+learning_rate: 0.1
+max_bin: None
+max_cat_threshold: None
+max_cat_to_onehot: None
+max_delta_step: None
+max_depth: 3
+max_leaves: None
+min_child_weight: None
+missing: nan
+monotone_constraints: None
+multi_strategy: None
+n_estimators: 50
+n_jobs: None
+num_parallel_tree: None
+random_state: 12
+reg_alpha: None
+reg_lambda: None
+sampling_method: None
+scale_pos_weight: None
+subsample: 0.6
+tree_method: None
+validate_parameters: None
+verbosity: None
+
+

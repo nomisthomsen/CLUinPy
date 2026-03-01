@@ -1,0 +1,44 @@
+Suitability Analysis Log
+========================
+
+classification: E:\Loreto_data\tif\lc2016.tif
+env_variables:
+  - E:\Loreto_data\tif\pred_variables\aspect.tif
+  - E:\Loreto_data\tif\pred_variables\dist_city.tif
+  - E:\Loreto_data\tif\pred_variables\dist_highway.tif
+  - E:\Loreto_data\tif\pred_variables\dist_oilfield.tif
+  - E:\Loreto_data\tif\pred_variables\dist_pfo.tif
+  - E:\Loreto_data\tif\pred_variables\dist_river.tif
+  - E:\Loreto_data\tif\pred_variables\dist_road.tif
+  - E:\Loreto_data\tif\pred_variables\elevation.tif
+  - E:\Loreto_data\tif\pred_variables\entisol.tif
+  - E:\Loreto_data\tif\pred_variables\inceptisol.tif
+  - E:\Loreto_data\tif\pred_variables\ntli2013.tif
+  - E:\Loreto_data\tif\pred_variables\popdens_unadj.tif
+  - E:\Loreto_data\tif\pred_variables\precipitation.tif
+  - E:\Loreto_data\tif\pred_variables\slope.tif
+n_samples_corr: 1000
+sample_size_list:
+  - 500
+  - 500
+  - 441
+  - 275
+  - 500
+  - 100
+  - 499
+sample_points_shapefile: None
+vif_threshold: 5
+vif_filtered_env_vars:
+  - aspect
+  - dist_river
+  - dist_road
+  - entisol
+  - ntli2013
+  - popdens_unadj
+  - slope
+min_distance: 3
+test_fraction: 0.3
+random_state: 12
+dynamic: False
+dyn_years: None
+no_data_value: -9999

@@ -9,7 +9,7 @@ This tutorial offers a way for potential users of CLUinPy to test the script wit
 
 We use the Canton Loreto district in Ecuador as a case study area for our test data. Loreto is located in the Western part of the Ecuadorian Amazon and has experienced high dynamics in land use change over the past decades. [ Lippe et al. 2022](https://www.sciencedirect.com/science/article/pii/S0264837722002344) have projected land use change in Loreto until 2030 with DynaCLUE. Hence, for more context on the study area we kindly refer to this paper.
 
-![Study area map](testdata/land_cover_map_2016.jpg)
+![Study area map](../testdata/land_cover_map_2016.jpg)
 *Figure 1. Land cover map of Loreto canton for the year 2016 (figure created by S. Thomsen 2026).*
 
 ## Data
@@ -79,6 +79,6 @@ You may want to calculate location suitability for the land cover classes yourse
 
 ### CLUinPy (land use model)
 
-To run one of the scenarios in CLUinPy, you need to run the `run_CLUinPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](README.md) and [manual](CLUinPy_manual.md) in this repository for further information on how to run CLUinPy with configuration txt files.
+To run one of the scenarios in CLUinPy, you need to run the `run_CLUinPy.py` script from the Scripts module and call the `config*.txt` files as the only argument. Please refer to the [ReadMe](../README.md) and [manual](CLUinPy_manual.md) in this repository for further information on how to run CLUinPy with configuration txt files.
 
 For visualization of the resulting land cover map projections in QGIS, you can use the `land_cover_visualization.qml` file.

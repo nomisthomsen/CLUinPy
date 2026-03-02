@@ -4,11 +4,11 @@ This Python-based land use modeling script simulates land use and land cover cha
 
 This repository contains three sections:
 
-1. The location suitability modelling (which is a prerequisite for land use modelling in CLUMondo / CLUinPy). You can find the relevant scripts in the folder [suitability](src/suitability/) and the manual [here](suitability_manual.md).
+1. The location suitability modelling (which is a prerequisite for land use modelling in CLUMondo / CLUinPy). You can find the relevant scripts in the folder [suitability](src/suitability/) and the manual [here](docs/suitability_manual.md).
   
-2. The proper LULCC model CLUinPy based on CLUMondo. You can find the relevant scripts in the folder [cluinpy](src/cluinpy) and the manual [here](CLUinPy_manual.md).
+2. The proper LULCC model CLUinPy based on CLUMondo. You can find the relevant scripts in the folder [cluinpy](src/cluinpy) and the manual [here](docs/CLUinPy_manual.md).
 
-3. A beginners [tutorial](Tutorial_test_data.md), including test data for Loreto canton, Ecuador.
+3. A beginners [tutorial](docs/Tutorial_test_data.md), including test data for Loreto canton, Ecuador.
 
 ---
 
@@ -101,7 +101,7 @@ The model is executed using a --config text file. The config typically contains:
 - model/scenario parameters
 - output paths or output directory settings
 
-Please refer to the [manual](CLUinPy_manual.md) for a complete list of input requirements for the configuration txt file.
+Please refer to the [manual](docs/CLUinPy_manual.md) for a complete list of input requirements for the configuration txt file.
 
 ### Path notes
 
@@ -114,7 +114,7 @@ Both `E:\folder\file.txt` and `E:/folder/file.txt` are typically fine for Python
 ## Suitability Modelling
 CLUinPy requires users to include location suitability maps for each land cover class. This repository offers users to model location suitability with a dedicated module. The code can be found in `src/suitability/` and the core script to run the model is `run_suitability.py`.   
 
-In our modelling framework, users can choose between different modelling algorithms, including Logistic Regression, Random Forest and Support Vector Machines. More information on suitability modelling can be found in the respective [manual](suitability_manual.md). 
+In our modelling framework, users can choose between different modelling algorithms, including Logistic Regression, Random Forest and Support Vector Machines. More information on suitability modelling can be found in the respective [manual](docs/suitability_manual.md). 
 
 ---
 

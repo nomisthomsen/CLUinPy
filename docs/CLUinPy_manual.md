@@ -5,7 +5,7 @@
 *Module:* `Land_use_model`  
 *Runner script:* `CLUinPy/scripts/run_CLUinPy.py`  
 
-> This document is the manual for the CLUinPy model. It explains the model functioning but most importantly the necessary data and parameters to successfully run the model. We have provided a [hands-on tutorial](Tutorial_test_data) and [test data](testdata) apart in another document / folder. 
+> This document is the manual for the CLUinPy model. It explains the model functioning but most importantly the necessary data and parameters to successfully run the model. We have provided a [hands-on tutorial](Tutorial_test_data) and [test data](../testdata) apart in another document / folder. 
 
 > Important: The content and code of the CLUinPy model is largely **based on CLUMondo**, which was released in C++ by Peter Verburg (https://github.com/VUEG/CLUMondo). We decided to give this Python adaptation of CLUMondo an own name to avoid confusion regarding authorship, endorsement, or institutional affiliation. We acknowledge the legacy of CLUMondo explicitly in the copyright statement. In previous versions, this model had the working title *CLUMondoPy*.   
 

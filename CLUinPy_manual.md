@@ -546,15 +546,3 @@ python src/scripts/run_CLUinPy.py \
     - `lus_matrix` columns
     - `lus_conv` columns
 
----
-
-## Where additional documentation would help most
-
-If you extend this manual further, these are the highest-impact gaps to fill:
-
-1. **A single “class legend” table** (class ID ↔ class name ↔ suitability band index) used consistently across all inputs.
-2. **A “service legend” table** (service name ↔ column order) used consistently across demand/yield/priority matrices.
-3. **Examples for special `allow` encodings** (age constraints, autonomous change), with a worked example.
-4. **Guidance on parameter calibration** (typical ranges for `conv_res`, `neigh_weights`, convergence thresholds).
-5. **A minimal runnable example** in `testdata/` showing exact command(s) to reproduce expected outputs.
-

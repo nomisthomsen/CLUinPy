@@ -4,7 +4,7 @@ This Python-based land use modeling script simulates land use and land cover cha
 
 This repository contains three sections:
 
-1. The land cover suitability modelling (which is a prerequisite for land use modelling in CLUMondo / CLUinPy). You can find the relevant scripts in the folder [Suitability](src/suitability/) and the manual [here](suitability_manual.md).
+1. The location suitability modelling (which is a prerequisite for land use modelling in CLUMondo / CLUinPy). You can find the relevant scripts in the folder [suitability](src/suitability/) and the manual [here](suitability_manual.md).
   
 2. The proper LULCC model CLUinPy based on CLUMondo. You can find the relevant scripts in the folder [cluinpy](src/cluinpy) and the manual [here](CLUinPy_manual.md).
 
